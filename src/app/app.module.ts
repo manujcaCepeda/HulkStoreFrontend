@@ -18,6 +18,7 @@ import { HttpModule } from '@angular/http';
 import { CategoriaService } from './services/categoria.service';
 import { UsuarioService } from './services/usuario.service';
 import { IngresoService } from './services/ingreso.service';
+import { VentaService } from './services/venta.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { IngresoService } from './services/ingreso.service';
     FormsModule,
     HttpModule
   ],
-  providers: [ProductoService, CategoriaService, UsuarioService, IngresoService],
+  providers: [ProductoService, CategoriaService, UsuarioService, IngresoService, VentaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,15 +32,15 @@ export class SinginComponent implements OnInit {
           this.loginStatus.codigo = "ERROR_INGRESO";
           this.loginStatus.mensaje = "Usuario o Password Incorrectos!";
         }
+
+        localStorage.setItem('HulkStore-Rol', this.usuario.rol);
+        localStorage.setItem('HulkStore-UsuarioID', this.usuario.id);
+        localStorage.setItem('HulkStore-Usuario', this.usuario.nombres + ' ' + this.usuario.apellidos);
         this.router.navigateByUrl('/home');
       },
       error => {
         console.error('Ocurrio un error al obtener la lista de productos, navigating to login: ', error);
       });
-  }
-
-  onLogout() {
-    //this.authService.logout();
   }
 
   private initLogin() {
