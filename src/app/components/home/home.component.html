@@ -3,55 +3,26 @@
   <p class="lead">Tienda Online de productos para sus empleados</p>
 
 
-
-
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top mx-5" src="https://ae01.alicdn.com/kf/HTB1wCcgJFXXXXajXVXXq6xXFXXXZ/Nuevo-2017-hombres-de-la-Marca-Polo-Camisa-Para-Hombre-Del-Dise-ador-Marcas-camisa-de.jpg_640x640.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card with supporting text below.</p>
-        <div class="row">
-          <p class="col-7">Precio: 10.25</p>
-          <p class="col-5">Cantidad: 10</p>
+<div class="row">
+  <div class="col-md-3" *ngFor="let producto of productos">
+      <div class="card my-2">
+          <img class="card-img-top mx-5" src="{{producto.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text">{{producto.descripcion}}</p>
+            <div class="row">
+              <p class="col-7" style="font-size: 12.5px">Precio: <em style="color: brown; font-weight: bold">{{producto.precio | currency : 'USD ':true:'1.2'}}</em></p>
+              <p class="col-5" style="font-size: 12.5px">Cantidad:<em style="color: brown; font-weight: bold">{{producto.cantidad}}</em></p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Agregar</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-footer">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">Add</button>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top mx-5" src="https://ae01.alicdn.com/kf/HTB1wCcgJFXXXXajXVXXq6xXFXXXZ/Nuevo-2017-hombres-de-la-Marca-Polo-Camisa-Para-Hombre-Del-Dise-ador-Marcas-camisa-de.jpg_640x640.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below.</p>
-        <div class="row">
-          <p class="col-7">Precio: 10.25</p>
-          <p class="col-5">Cantidad: 10</p>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">Add</button>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top mx-5" src="https://ae01.alicdn.com/kf/HTB1wCcgJFXXXXajXVXXq6xXFXXXZ/Nuevo-2017-hombres-de-la-Marca-Polo-Camisa-Para-Hombre-Del-Dise-ador-Marcas-camisa-de.jpg_640x640.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card with supporting text below.</p>
-        <div class="row">
-          <p class="col-7">Precio: 10.25</p>
-          <p class="col-5">Cantidad: 10</p>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-sm btn-outline-secondary">Add</button>
-      </div>
-    </div>
   </div>
+</div>
+
   
 </div>

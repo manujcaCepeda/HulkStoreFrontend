@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginStatus, Login } from '../../models/login';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoginStatus, Login, Registro } from '../../models/login';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-singup',
@@ -10,36 +12,34 @@ export class SingupComponent implements OnInit {
 
   alertStyle = '';
   loginStatus = new LoginStatus('', '');
-  model = new Login('', '');
+  model = new Registro('', '', '', '', '', '', '');
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService, private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
 
   onRegister() {
-    debugger;
-    this.initLogin();
-    /*this.authService.login(this.model)
-      .subscribe((status: LoginStatus) => {
-        this.loginStatus = status;
-        if (status.code === 'FAILURE') {
-          this.alertStyle = 'alert alert-danger';
-        }
-      });*/
-      this.loginStatus.code = "404";
-      this.loginStatus.message = "Erorr xxx x  x x x ";
-      this.alertStyle = 'alert alert-danger';
-  }
+    this.model.rol = { id: 3 };
+    this.usuarioService.guardarUsuario(this.model)
+      .then((status: LoginStatus) => {
+        this.loginStatus.codigo = "INGRESO_EXITOSO";
+        this.loginStatus.mensaje = "Ingreso Nuevo Usuario: Exitoso!";
+        this.router.navigateByUrl('/singin');
+      }).catch(error => {
+        this.alertStyle = 'alert alert-danger';
+        this.loginStatus.codigo = "USER_EXISTE";
+        this.loginStatus.mensaje = "Ya existe un registro con su correo!";
+      });
+    this.alertStyle = 'alert alert-success';
 
-  onLogout() {
-    //this.authService.logout();
   }
 
   private initLogin() {
     this.alertStyle = '';
-    this.loginStatus.code = '';
-    this.loginStatus.message = '';
+    this.loginStatus.codigo = '';
+    this.loginStatus.mensaje = '';
   }
 }

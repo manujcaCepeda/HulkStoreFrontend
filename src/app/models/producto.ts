@@ -1,18 +1,19 @@
 export class Producto {
     constructor(
+        public id: number,
         public nombre: string,
-        public decripcion: string,
-        public categoria: string,
+        public descripcion: string,
+        public categoria: any,
         public precio: number,
         public cantidad: number,
-        public imagen: string
+        public url: string
     ) { }
 }
 
 
 export class ProductoStatus {
     constructor(
-        public code: string,
-        public message: string
+        public codigo: string,
+        public mensaje: string
     ) { }
 }

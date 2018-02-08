@@ -7,18 +7,19 @@ export class Login {
 
 export class LoginStatus {
     constructor(
-        public code: string,
-        public message: string
+        public codigo: string,
+        public mensaje: string
     ) { }
 }
 
 export class Registro {
     constructor(
-        public apellido: string,
-        public nombre: string,
-        public email: string,
+        public apellidos: string,
+        public nombres: string,
+        public correo: string,
         public password: string,
         public telefono: string,
-        public direccion: string
+        public direccion: string,
+        public rol:any
     ) { }
 }

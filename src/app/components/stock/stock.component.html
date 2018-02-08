@@ -1,3 +1,36 @@
-<p>
-  stock works!
-</p>
+<div class="container">
+  
+  <div style="margin-top: 30px">
+    <h3>Stock de Productos - Hulk Store</h3>
+    <hr/>
+
+
+    <div class="col-md-12">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Categoría</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <th>{{producto.categoria}}</th>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.cantidad}}</td>
+           
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+  </div>
+</div>

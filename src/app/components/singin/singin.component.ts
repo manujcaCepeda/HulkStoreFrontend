@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute }   from '@angular/router';
 import { Login, LoginStatus } from '../../models/login';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-singin',
@@ -11,26 +13,30 @@ export class SinginComponent implements OnInit {
   alertStyle = '';
   loginStatus = new LoginStatus('', '');
   model = new Login('', '');
+  usuario:any;
 
 
-  constructor() { }
+  constructor(public usuarioService:UsuarioService, private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
   onLogin() {
     debugger;
-    this.initLogin();
-    /*this.authService.login(this.model)
-      .subscribe((status: LoginStatus) => {
-        this.loginStatus = status;
-        if (status.code === 'FAILURE') {
+    this.usuarioService.login(this.model)
+      .subscribe((user: any) => {
+        this.usuario = user;
+        if(!this.usuario){
           this.alertStyle = 'alert alert-danger';
+          this.loginStatus.codigo = "ERROR_INGRESO";
+          this.loginStatus.mensaje = "Usuario o Password Incorrectos!";
         }
-      });*/
-      this.loginStatus.code = "404";
-      this.loginStatus.message = "Erorr xxx x  x x x ";
-      this.alertStyle = 'alert alert-danger';
+        this.router.navigateByUrl('/home');
+      },
+      error => {
+        console.error('Ocurrio un error al obtener la lista de productos, navigating to login: ', error);
+      });
   }
 
   onLogout() {
@@ -39,8 +45,8 @@ export class SinginComponent implements OnInit {
 
   private initLogin() {
     this.alertStyle = '';
-    this.loginStatus.code = '';
-    this.loginStatus.message = '';
+    this.loginStatus.codigo = '';
+    this.loginStatus.mensaje = '';
   }
 
 }

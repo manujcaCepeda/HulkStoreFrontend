@@ -15,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { routes } from './app.routes';
 import { ProductoService } from './services/producto.service';
 import { HttpModule } from '@angular/http';
+import { CategoriaService } from './services/categoria.service';
+import { UsuarioService } from './services/usuario.service';
+import { IngresoService } from './services/ingreso.service';
 
 
 @NgModule({
@@ -35,7 +38,7 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     HttpModule
   ],
-  providers: [ProductoService],
+  providers: [ProductoService, CategoriaService, UsuarioService, IngresoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
