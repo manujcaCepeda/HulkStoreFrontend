@@ -5,6 +5,7 @@
     <a class="p-2 text-dark" routerLink="/ingreso" routerLinkActive="active" *ngIf="rol ===  'ROL VENDEDOR'">Ingresar de Mercadería</a>
     <a class="p-2 text-dark" routerLink="/stock" routerLinkActive="active" *ngIf="rol ===  'ROL ADMINISTRADOR'">Stock Productos</a>
     <a class="p-2 text-dark" routerLink="/producto" routerLinkActive="active" *ngIf="rol ===  'ROL ADMINISTRADOR'">Gestión Productos</a>
+    <a class="p-2 text-dark" routerLink="/mis-compras" routerLinkActive="active" *ngIf="rol ===  'ROL EMPLEADO'">Mis Compras</a>
   </nav>
   <nav>
       <a class="btn btn-link" routerLink="/home" routerLinkActive="active" *ngIf="rol" style="text-decoration: none; color: green ;">{{usuario}}</a>

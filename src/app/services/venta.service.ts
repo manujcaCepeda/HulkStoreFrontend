@@ -32,4 +32,14 @@ export class VentaService {
         Observable.throw(error.json())
       });
   }
+
+
+
+  getVentas(usuarioId:number) {
+    const url = `${this.URL}/${usuarioId}`;
+    return this.http.get(url)
+      .map((res: Response) => res.json())
+      .map(res => res.data)
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }

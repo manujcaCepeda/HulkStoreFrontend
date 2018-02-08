@@ -19,6 +19,7 @@ import { CategoriaService } from './services/categoria.service';
 import { UsuarioService } from './services/usuario.service';
 import { IngresoService } from './services/ingreso.service';
 import { VentaService } from './services/venta.service';
+import { ComprasRealizadasComponent } from './components/compras-realizadas/compras-realizadas.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { VentaService } from './services/venta.service';
     NavbarComponent,
     SinginComponent,
     SingupComponent,
-    HomeComponent
+    HomeComponent,
+    ComprasRealizadasComponent
   ],
   imports: [
     BrowserModule,
