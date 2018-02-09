@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class CategoriaService {
 
-  URL = 'http://localhost:8080/categoria';
+  URL = 'http://181.211.5.38:8081/categoria';
 
   constructor(private http: Http) { }
 

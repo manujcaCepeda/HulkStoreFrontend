@@ -15,7 +15,7 @@ import { Venta, VentaStatus } from '../models/venta';
 @Injectable()
 export class VentaService {
 
-  URL = 'http://localhost:8080/venta';
+  URL = 'http://181.211.5.38:8081/venta';
   headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }

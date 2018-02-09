@@ -15,7 +15,7 @@ import { Login, Registro, LoginStatus } from '../models/login';
 @Injectable()
 export class UsuarioService {
 
-  URL = 'http://localhost:8080/usuario';
+  URL = 'http://181.211.5.38:8081/usuario';
   headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }

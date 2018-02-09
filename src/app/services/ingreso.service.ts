@@ -14,7 +14,7 @@ import { Headers } from '@angular/http';
 @Injectable()
 export class IngresoService {
 
-  URL = 'http://localhost:8080/ingreso';
+  URL = 'http://181.211.5.38:8081/ingreso';
   headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }

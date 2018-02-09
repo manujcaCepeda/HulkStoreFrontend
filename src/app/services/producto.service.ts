@@ -14,7 +14,7 @@ import { Headers } from '@angular/http';
 @Injectable()
 export class ProductoService {
 
-  URL = 'http://localhost:8080/producto';
+  URL = 'http://181.211.5.38:8081/producto';
   headers = new Headers({ 'Content-Type': 'application/json' });
 
 
