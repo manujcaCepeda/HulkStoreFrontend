@@ -20,7 +20,7 @@ export class ComprasRealizadasComponent implements OnInit {
   getMisVentas() {
 
     let usuarioId = localStorage.getItem("HulkStore-UsuarioID");
-    this.ventaService.getVentas(usuarioId)
+    this.ventaService.getVentas(parseInt(usuarioId))
       .subscribe((misCompras: Venta[]) => {
         this.misCompras = misCompras;
       },
